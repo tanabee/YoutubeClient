@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VSc-hc-2i0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video ListVC-->
+        <scene sceneID="goX-n4-yzz">
+            <objects>
+                <viewController id="VSc-hc-2i0" customClass="VideoListVC" customModule="YoutubeClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5CO-gT-upB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-Dp-v2f">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VSc-hc-2i0" id="5cu-da-bCr"/>
+                                    <outlet property="delegate" destination="VSc-hc-2i0" id="kPh-0O-mks"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gOO-Dp-v2f" firstAttribute="top" secondItem="zfS-JS-JBS" secondAttribute="top" id="Tr2-XR-EYw"/>
+                            <constraint firstItem="zfS-JS-JBS" firstAttribute="trailing" secondItem="gOO-Dp-v2f" secondAttribute="trailing" id="W2H-P9-SlT"/>
+                            <constraint firstItem="gOO-Dp-v2f" firstAttribute="leading" secondItem="zfS-JS-JBS" secondAttribute="leading" id="pmR-jm-3KG"/>
+                            <constraint firstItem="zfS-JS-JBS" firstAttribute="bottom" secondItem="gOO-Dp-v2f" secondAttribute="bottom" id="tQL-5T-U5t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zfS-JS-JBS"/>
+                    </view>
+                    <connections>
+                        <segue destination="Vmt-C4-Pvc" kind="show" identifier="ShowPlayer" id="8uD-hd-ui7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDf-Hn-vsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="170"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="oDI-21-EDT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Player" id="Vmt-C4-Pvc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqL-o0-qEz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="169"/>
+        </scene>
+    </scenes>
+</document>
