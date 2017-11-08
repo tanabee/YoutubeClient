@@ -15,14 +15,19 @@ class VideoModel: NSObject {
     
     func load(success: @escaping () -> Void, failed: @escaping () -> Void) {
         Alamofire.request("https://www.googleapis.com/youtube/v3/search?key=AIzaSyDKIFKd1xQO6QxqoEts757t_pQoN8spoo4&part=snippet&channelId=UCO7gI_N7xAmvE7HbIFtFtgw&maxResults=50").responseJSON { response in
-            //print(response.result.value)
             guard let value = response.result.value as? [String:Any],
                 let items = value["items"] as? [[String:Any]] else {
                     failed()
                     return
             }
             
-            self.list = items
+            self.list = items.filter({ (item) -> Bool in
+                if let id = item["id"] as? [String:Any],
+                    let _ = id["videoId"] as? String {
+                    return true
+                }
+                return false
+            })
             success()
         }
     }
