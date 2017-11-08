@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,8 +18,11 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         videoModel.load(success: {
-            //print(self.videoModel.list)
+            
             self.tableView.reloadData()
         }) {
             print("error")
@@ -33,24 +37,37 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoModel.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        if let snippet = videoModel.list[indexPath.row]["snippet"] as? [String:Any],
-            let title = snippet["title"] as? String {
-            cell.textLabel?.text = title
-        } else {
-            cell.textLabel?.text = "No title"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as? VideoCell else {
+            return UITableViewCell()
         }
+        
+        if let snippet = videoModel.list[indexPath.row]["snippet"] as? [String:Any] {
+            if let title = snippet["title"] as? String {
+                cell.mainLabel.text = title
+            } else {
+                cell.mainLabel.text = "No title"
+            }
+            
+            if let thumbnails = snippet["thumbnails"] as? [String:Any],
+                let defaultThumb = thumbnails["default"] as? [String:Any],
+                let urlStr = defaultThumb["url"] as? String
+            {
+                let url = URL(string: urlStr)
+                cell.mainImageView.kf.setImage(with: url)
+            } else {
+                cell.mainImageView.image = nil
+            }
+        }
+        
+        
+        
+        
         return cell
     }
     
@@ -60,15 +77,4 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             self.performSegue(withIdentifier: "ShowPlayer", sender: videoId)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
