@@ -18,10 +18,19 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
 
         videoModel.load(success: {
-            print(self.videoModel.list)
+            //print(self.videoModel.list)
             self.tableView.reloadData()
         }) {
             print("error")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPlayer" {
+            if let vc = segue.destination as? PlayerVC,
+            let videoId = sender as? String {
+                vc.videoId = videoId
+            }
         }
     }
 
@@ -46,7 +55,10 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ShowPlayer", sender: nil)
+        if let id = videoModel.list[indexPath.row]["id"] as? [String:Any],
+            let videoId = id["videoId"] as? String {
+            self.performSegue(withIdentifier: "ShowPlayer", sender: videoId)
+        }
     }
 
     /*

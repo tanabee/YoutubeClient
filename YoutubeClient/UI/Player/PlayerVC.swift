@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import WebKit
 
-class PlayerVC: UIViewController {
+class PlayerVC: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var webView: WKWebView!
+    public var videoId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        webView.navigationDelegate = self
+        
+        if let url = URL(string: "https://www.youtube.com/embed/\(videoId)") {
+            let urlRequest = URLRequest(url: url)
+            webView.load(urlRequest)
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("error")
     }
 
     override func didReceiveMemoryWarning() {
