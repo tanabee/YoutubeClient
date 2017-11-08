@@ -17,6 +17,7 @@
 		3980EB741F8708D7000ACA0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3980EB731F8708D7000ACA0A /* Main.storyboard */; };
 		39B9D9D61FB2D12900B69449 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B9D9D41FB2D12900B69449 /* Alamofire.framework */; };
 		39B9D9D71FB2D12900B69449 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B9D9D51FB2D12900B69449 /* Kingfisher.framework */; };
+		39B9D9DB1FB2E57600B69449 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B9D9DA1FB2E57600B69449 /* VideoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3980EB731F8708D7000ACA0A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		39B9D9D41FB2D12900B69449 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39B9D9D51FB2D12900B69449 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		39B9D9DA1FB2E57600B69449 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		3980EB541F87052E000ACA0A /* YoutubeClient */ = {
 			isa = PBXGroup;
 			children = (
+				39B9D9D91FB2E51F00B69449 /* Model */,
 				3980EB671F870622000ACA0A /* UI */,
 				3980EB551F87052E000ACA0A /* AppDelegate.swift */,
 				3980EB5C1F87052E000ACA0A /* Assets.xcassets */,
@@ -119,6 +122,14 @@
 				39B9D9D51FB2D12900B69449 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39B9D9D91FB2E51F00B69449 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39B9D9DA1FB2E57600B69449 /* VideoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				3980EB6C1F8706A1000ACA0A /* VideoListVC.swift in Sources */,
 				3980EB561F87052E000ACA0A /* AppDelegate.swift in Sources */,
 				3980EB6F1F8707B9000ACA0A /* PlayerVC.swift in Sources */,
+				39B9D9DB1FB2E57600B69449 /* VideoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

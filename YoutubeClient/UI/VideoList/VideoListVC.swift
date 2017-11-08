@@ -13,6 +13,13 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let model = VideoModel()
+        model.load(success: {
+            print(model.list)
+        }) {
+            print("error")
+        }
+        
         // Do any additional setup after loading the view.
     }
 
