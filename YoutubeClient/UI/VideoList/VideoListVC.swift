@@ -44,15 +44,15 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as? VideoCell else {
-            return UITableViewCell()
-        }
+
+
+        let cell = UITableViewCell()
         
         if let snippet = videoModel.list[indexPath.row]["snippet"] as? [String:Any] {
             if let title = snippet["title"] as? String {
-                cell.mainLabel.text = title
+                cell.textLabel?.text = title
             } else {
-                cell.mainLabel.text = "No title"
+                cell.textLabel?.text = "No title"
             }
             
             if let thumbnails = snippet["thumbnails"] as? [String:Any],
@@ -60,9 +60,10 @@ class VideoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 let urlStr = defaultThumb["url"] as? String
             {
                 let url = URL(string: urlStr)
-                cell.mainImageView.kf.setImage(with: url)
+                cell.imageView?.kf.setImage(with: url)
             } else {
-                cell.mainImageView.image = nil
+                cell.imageView?
+                    .image = nil
             }
         }
         

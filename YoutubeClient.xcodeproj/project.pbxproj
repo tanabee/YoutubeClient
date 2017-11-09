@@ -18,7 +18,6 @@
 		39B9D9D61FB2D12900B69449 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B9D9D41FB2D12900B69449 /* Alamofire.framework */; };
 		39B9D9D71FB2D12900B69449 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B9D9D51FB2D12900B69449 /* Kingfisher.framework */; };
 		39B9D9DB1FB2E57600B69449 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B9D9DA1FB2E57600B69449 /* VideoModel.swift */; };
-		3F2542E61FB33BF800EC800E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2542E51FB33BF800EC800E /* VideoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		39B9D9D41FB2D12900B69449 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39B9D9D51FB2D12900B69449 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		39B9D9DA1FB2E57600B69449 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
-		3F2542E51FB33BF800EC800E /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +94,6 @@
 			children = (
 				3980EB691F870681000ACA0A /* VideoList.storyboard */,
 				3980EB6B1F8706A1000ACA0A /* VideoListVC.swift */,
-				3F2542E51FB33BF800EC800E /* VideoCell.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2542E61FB33BF800EC800E /* VideoCell.swift in Sources */,
 				3980EB6C1F8706A1000ACA0A /* VideoListVC.swift in Sources */,
 				3980EB561F87052E000ACA0A /* AppDelegate.swift in Sources */,
 				3980EB6F1F8707B9000ACA0A /* PlayerVC.swift in Sources */,

@@ -20,65 +20,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-Dp-v2f">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="100" id="DhU-DU-Hzq" customClass="VideoCell" customModule="YoutubeClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DhU-DU-Hzq" id="kY3-oX-hhe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-bn-nSe">
-                                                    <rect key="frame" x="16" y="8" width="343" height="83.5"/>
-                                                    <subviews>
-                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZ1-ai-nz2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="83.5"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Utq-Ub-dpK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="83.5"/>
-                                                                    <color key="backgroundColor" red="0.90003272251308897" green="0.90003272251308897" blue="0.90003272251308897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Utq-Ub-dpK" secondAttribute="trailing" id="3GQ-vi-qrY"/>
-                                                                <constraint firstItem="Utq-Ub-dpK" firstAttribute="leading" secondItem="WZ1-ai-nz2" secondAttribute="leading" id="44X-cw-wgx"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Utq-Ub-dpK" secondAttribute="bottom" id="4hv-Ky-uNF"/>
-                                                                <constraint firstAttribute="width" constant="80" id="Cdz-tx-eNs"/>
-                                                                <constraint firstItem="Utq-Ub-dpK" firstAttribute="top" secondItem="WZ1-ai-nz2" secondAttribute="top" id="fFn-Jt-ZVZ"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpA-JC-zqD">
-                                                            <rect key="frame" x="110" y="0.0" width="44.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="jpA-JC-zqD" firstAttribute="top" secondItem="FfE-bn-nSe" secondAttribute="top" id="Y7k-HS-t23"/>
-                                                        <constraint firstAttribute="bottom" secondItem="WZ1-ai-nz2" secondAttribute="bottom" id="Z6E-yw-ekw"/>
-                                                        <constraint firstItem="WZ1-ai-nz2" firstAttribute="top" secondItem="FfE-bn-nSe" secondAttribute="top" id="oE6-Ya-MOC"/>
-                                                        <constraint firstItem="WZ1-ai-nz2" firstAttribute="leading" secondItem="FfE-bn-nSe" secondAttribute="leading" id="pcF-s8-G0b"/>
-                                                        <constraint firstItem="jpA-JC-zqD" firstAttribute="leading" secondItem="WZ1-ai-nz2" secondAttribute="trailing" constant="30" id="qpf-CQ-sgN"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="FfE-bn-nSe" firstAttribute="top" secondItem="kY3-oX-hhe" secondAttribute="top" constant="8" id="9HF-XO-Hac"/>
-                                                <constraint firstItem="FfE-bn-nSe" firstAttribute="leading" secondItem="kY3-oX-hhe" secondAttribute="leading" constant="16" id="ACJ-Ws-XCo"/>
-                                                <constraint firstAttribute="trailing" secondItem="FfE-bn-nSe" secondAttribute="trailing" constant="16" id="S2Y-Q8-DtH"/>
-                                                <constraint firstAttribute="bottom" secondItem="FfE-bn-nSe" secondAttribute="bottom" constant="8" id="sdH-vN-0Jt"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imageView" destination="Utq-Ub-dpK" id="wKH-jN-JKQ"/>
-                                            <outlet property="mainImageView" destination="Utq-Ub-dpK" id="Tst-lZ-NxU"/>
-                                            <outlet property="mainLabel" destination="jpA-JC-zqD" id="RQ0-50-Elk"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VSc-hc-2i0" id="5cu-da-bCr"/>
                                     <outlet property="delegate" destination="VSc-hc-2i0" id="kPh-0O-mks"/>
