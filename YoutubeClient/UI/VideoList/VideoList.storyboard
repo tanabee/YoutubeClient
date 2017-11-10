@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VSc-hc-2i0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VSc-hc-2i0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Video ListVC-->
+        <!--グロホー！-->
         <scene sceneID="goX-n4-yzz">
             <objects>
-                <viewController id="VSc-hc-2i0" customClass="VideoListVC" customModule="YoutubeClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="グロホー！" id="VSc-hc-2i0" customClass="VideoListVC" customModule="YoutubeClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5CO-gT-upB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,12 +36,13 @@
                         <viewLayoutGuide key="safeArea" id="zfS-JS-JBS"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="gOO-Dp-v2f" id="X3f-Ml-dsg"/>
                         <segue destination="Vmt-C4-Pvc" kind="show" identifier="ShowPlayer" id="8uD-hd-ui7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDf-Hn-vsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="170"/>
+            <point key="canvasLocation" x="149.59999999999999" y="169.56521739130437"/>
         </scene>
         <!--Player-->
         <scene sceneID="oDI-21-EDT">
